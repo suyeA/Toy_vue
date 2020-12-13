@@ -12,6 +12,8 @@ Vue.use(ElementUI)
 // vue-resource: $http  引用类型
 Vue.prototype.$axios = axios
 axios.defaults.baseURL = 'http://localhost:8888/api/private/v1/'
+axios.defaults.headers.post['Content-type'] = 'application/x-www-form-urlencoded'
+
 axios.interceptors.request.use(function (config) {
   // console.log('config', config)
   // 请求拦截器中统一的修改config.headers
