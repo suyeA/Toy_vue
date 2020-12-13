@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import https from 'axios'
+
 export default {
   data () {
     return {
@@ -47,14 +47,11 @@ export default {
   },
   async created () {
     // 进入页面时 执行的代码。在这里发送axios请求
-    const res = await https({
-      method: 'get',
-      url: '',
-      headers: {}
-    })
+    const { meta, data } = await this.$axios.get('menus')
+
     // 得到返回的数据 res 就是接口返回的数据
     // 数据获值
-    this.boxList = res.data
+    if (meta.status === 200) this.boxList = data
   },
   methods: {
     change (even) {
