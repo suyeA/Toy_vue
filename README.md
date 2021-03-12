@@ -1,4 +1,4 @@
-# csh_project
+# toyVue
 
 ## Project setup
 ```
